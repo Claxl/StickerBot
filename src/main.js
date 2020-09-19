@@ -64,14 +64,14 @@ async function start(client) {
 		console.log(message.type);
 		console.log("=============================END====================================");
 		check = 1;
-		if((message.body ==="!Guida")||(message.body==="!guida")){
+		/*if((message.body ==="!Guida")||(message.body==="!guida")){
 			console.log("Guida");
 			client.sendText(message.from,'Collegati al sito https://giphy.com/ \n\nScegli la gif da te preferita\n\nTieni premuto e clicca "Condividi" Se ti trovi su safari\nTieni premuto e clicca "immagine in altra scheda"  Se ti trovi su chrome\n\nPoi invia quel link');
 			client.sendText(message.from,"https://youtu.be/aGc8Po8G0Bo  \n\n\nEcco a te una piccola videoguida per safari\n");
 			client.sendText(message.from,"https://youtu.be/YBe_7KzvQ_g \n\n\nEcco a te una piccola videoguida per chrome\n");
 			client.sendText(message.from,"Se invece vuoi uno sticker statico, manda una foto\n\nN.B. potrebbe prendere solo la parte centrale della foto");
 			check = 0;
-		}
+		}*/
 		if((message.body === "!Creator")||(message.body==="!creator")){
 			console.log("Creator");
 			client.sendText(message.from,"https://www.instagram.com/whataboutclaxl/ \n\n\n https://github.com/Claxl \n\n\nContattami per qualsiasi problema sul bot, se vuoi contribuire alla sua crescita");
@@ -121,7 +121,7 @@ async function start(client) {
 					if (err) throw err;
 					console.log('The file has been saved!');
 					var postData={
-						api_key: "zjlFTId5PXa6u3xQQAWB6RqTKqsOYiVI",
+						api_key: YOUR-API-KEY,
 						file:{
 							value : fs.createReadStream("prova.mp4"),
 							options:{
@@ -162,14 +162,14 @@ async function start(client) {
 			}
 			check = 0;
 		}
-		if ((message.body === 'Ciao')||(message.body === 'ciao')) {
+		/*if ((message.body === 'Ciao')||(message.body === 'ciao')) {
 		  client.sendText(message.from, "Ciao, benvenuto.🔥🔥\n\nUsa il comando !comandi (o !Comandi), per sapere tutto ciò che puoi fare\n");
-		}else{
+		}else{*/
 			if(((message.type==="chat")&&(check === 1 ))||(message.data==="!comandi")||(message.data === "!Comandi")){
 				client.sendText(message.from,"I comandi sono i seguenti : \n\n!Guida (o !guida):\nScrivi questo per le guide sui due maggiori browser per sapere come fare\n\n!Creator (o !creator)");
 				console.log("Comandi");	
 			}
-		}
+		//}
 	});
     client.onIncomingCall(async call=>{
         await client.sendText(call.peerJid._serialized, 'Mi dispiace ma niente chiamate');
