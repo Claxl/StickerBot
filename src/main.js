@@ -64,14 +64,6 @@ async function start(client) {
 		console.log(message.type);
 		console.log("=============================END====================================");
 		check = 1;
-		/*if((message.body ==="!Guida")||(message.body==="!guida")){
-			console.log("Guida");
-			client.sendText(message.from,'Collegati al sito https://giphy.com/ \n\nScegli la gif da te preferita\n\nTieni premuto e clicca "Condividi" Se ti trovi su safari\nTieni premuto e clicca "immagine in altra scheda"  Se ti trovi su chrome\n\nPoi invia quel link');
-			client.sendText(message.from,"https://youtu.be/aGc8Po8G0Bo  \n\n\nEcco a te una piccola videoguida per safari\n");
-			client.sendText(message.from,"https://youtu.be/YBe_7KzvQ_g \n\n\nEcco a te una piccola videoguida per chrome\n");
-			client.sendText(message.from,"Se invece vuoi uno sticker statico, manda una foto\n\nN.B. potrebbe prendere solo la parte centrale della foto");
-			check = 0;
-		}*/
 		if((message.body === "!Creator")||(message.body==="!creator")){
 			console.log("Creator");
 			client.sendText(message.from,"https://www.instagram.com/whataboutclaxl/ \n\n\n https://github.com/Claxl \n\n\nContattami per qualsiasi problema sul bot, se vuoi contribuire alla sua crescita");
@@ -88,7 +80,7 @@ async function start(client) {
 			for(var k = 0 ; k< stick[index].usedUrl.length;k++){
 				client.sendText(message.from,(k+1)+"\t"+stick[index].usedUrl[k]);
 			}
-			//client.sendText(message.from,+stick[index].usedUrl);
+			client.sendText(message.from,+stick[index].usedUrl);
 			client.sendText(message.from,"Inviami il link inerente alla gif che non ha funzionato e provvederò a reinviarla");
 			sticker = 1;
 			check = 0;
