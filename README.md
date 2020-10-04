@@ -11,6 +11,7 @@ This is a simple script that allows you to do sticker and animated sticker
 ```bash
 npm i
 npm install gify-cli -g
+npm install colors
 ```
 - After the install of the module, start the bot with command
 ```bash
