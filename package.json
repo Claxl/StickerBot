@@ -1,0 +1,32 @@
+{
+  "name": "stickerbot",
+  "version": "1.0.0",
+  "description": "This is a simple script that allows you to do sticker and animated sticker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Claxl/StickerBot.git"
+  },
+  "keywords": [
+    "sticker-bot",
+    "whatsapp"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Claxl/StickerBot/issues"
+  },
+  "homepage": "https://github.com/Claxl/StickerBot#readme",
+  "dependencies": {
+    "@open-wa/wa-automate": "^2.0.28",
+    "@open-wa/wa-decrypt": "^2.0.1",
+    "child_process": "^1.0.2",
+    "colors": "^1.4.0",
+    "fs-extra": "^9.0.1",
+    "moment-timezone": "^0.5.31",
+    "process": "^0.11.10"
+  }
+}
