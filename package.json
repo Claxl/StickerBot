@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Claxl/StickerBot#readme",
   "dependencies": {
-    "@open-wa/wa-automate": "^2.0.28",
+    "@open-wa/wa-automate": "^3.0.15",
     "@open-wa/wa-decrypt": "^2.0.1",
     "child_process": "^1.0.2",
     "colors": "^1.4.0",
