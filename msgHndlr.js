@@ -9,6 +9,15 @@ const { stdout } = require('process')
 
 moment.tz.setDefault('Europe/Rome').locale('id')
 
+//FUNCTION TO VERIFY SIZE
+function getFilesizeInBytes() {
+var stats = fs.statSync('./media/output.gif')
+var fileSizeInBytes = stats.size;
+//Converting to megabytes
+var fileSizeInMegabytes = fileSizeInBytes / (1024*1024);
+return fileSizeInMegabytes;
+}
+
 module.exports = msgHandler = async (client, message) => {
     try {
         const { type, id, from, t, sender, isGroupMsg, chat, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
@@ -41,7 +50,13 @@ module.exports = msgHandler = async (client, message) => {
 			await exec(`gify ${filename} ./media/output.gif --fps=30 --scale=240:240`, async function (error, stdout, stderr) {
 				console.log(moment().format("H:mm:ss").green+" video convertito in gif "+message.from);
 				const gif = await fs.readFileSync('./media/output.gif', { encoding: "base64" })
-				await client.sendImageAsSticker(from, `data:image/gif;base64,${gif.toString('base64')}`)
+				getFilesizeInBytes(); //Verify the file size
+				if (getFilesizeInBytes() > 4.3){
+					console.log(moment().format("H:mm:ss").green+" File too large "+message.from);
+					client.reply(from, "Your gif/videos it's too large, try to compress/optimaze it and send it again!", id)
+				} else {
+					await client.sendImageAsSticker(from, `data:image/gif;base64,${gif.toString('base64')}`)
+				}
 				console.log(moment().format("H:mm:ss").green+" sticker inviato "+message.from);
 			})//
 		}
